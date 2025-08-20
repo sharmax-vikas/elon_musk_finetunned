@@ -12,7 +12,7 @@ def _get_file_paths_from_directory(directory):
     return [os.path.join(directory, filename) for filename in os.listdir(directory)]
 
 
-def _parse_turn_from_line(line, user_tag="INTERVIEWER:", assistant_tag="TRUMP:"):
+def _parse_turn_from_line(line, user_tag="INTERVIEWER:", assistant_tag="Elon Musk:"):
     if user_tag in line:
         return {"role": "user", "content": line.replace(user_tag, "").strip()}
     elif assistant_tag in line:
@@ -50,7 +50,7 @@ def _construct_conversations_from_interview(
             current_user_turns = 0
 
         turn = _parse_turn_from_line(
-            line, user_tag="INTERVIEWER:", assistant_tag="TRUMP:"
+            line, user_tag="INTERVIEWER:", assistant_tag="Elon Musk:"
         )
         if turn["role"] == "same":
             if len(current_conversation) > 0:
