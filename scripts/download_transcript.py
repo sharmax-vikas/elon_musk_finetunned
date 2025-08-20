@@ -72,7 +72,7 @@ def _transcribe_audio(url: str, title: str):
 
         print(transcript_text)
 
-        with open(f"data/transcripts/raw/{title}.txt", "w") as file:
+        with open(f"data/transcripts/{title}.txt", "w") as file:
             file.write(transcript_text)
 
         print("Transcription completed and saved to transcript.txt")
