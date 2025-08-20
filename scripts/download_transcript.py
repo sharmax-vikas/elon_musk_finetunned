@@ -96,24 +96,3 @@ for url in tqdm(YT_URL):
 
     transcribe_from_youtube(url, download_audio=True)
     print(f"Finished processing {url}")
-# print("Transcribing...")
-# config = aai.TranscriptionConfig(speaker_labels=True)
-
-# transcriber = aai.Transcriber()
-# transcript = transcriber.transcribe(r"data\audio\Elon Musk Interview ｜ The Future, Engineered ｜ X Takeover 2025.m4a", config=config)
-# print(transcript)
-# if not transcript.utterances:
-#     raise ValueError(
-#         "Something went wrong with downloading the audio (might be protected). Please download manually"
-#     )
-
-# transcript_text = ""
-# for utterance in transcript.utterances:
-#     transcript_text += f"Speaker {utterance.speaker}: {utterance.text}\n"
-
-# print(transcript_text)
-
-# with open(f"data/transcripts/raw/a.txt", "w") as file:
-#     file.write(transcript_text)
-
-# print("Transcription completed and saved to transcript.txt")
